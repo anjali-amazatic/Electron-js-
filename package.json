@@ -1,0 +1,22 @@
+{
+  "name": "shooping_list_electronjs",
+  "version": "1.0.0",
+  "description": "shopping list",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/mac/icon.icns --prune=true --out=dist",
+    "package-win": "electron-packager . app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/win/icon.ico --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-linux": "electron-packager . app --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/png/1024x1024.png --prune=true --out=dist --executableName=shooping_list_electronjs",
+    "build:snap": "electron-installer-snap --src=dist/app-linux-x64",
+    "build:deb": "electron-installer-debian --src dist/app-linux-x64  --dest src/dist/installers/ --arch amd64"
+  },
+  "author": "anjali",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.1.0",
+    "electron-installer-debian": "^3.1.0",
+    "electron-installer-snap": "^5.2.0",
+    "electron-packager": "^17.1.1"
+  }
+}
